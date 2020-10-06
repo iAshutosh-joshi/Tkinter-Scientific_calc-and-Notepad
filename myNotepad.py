@@ -11,10 +11,10 @@ def new():
 
 def save():
     global file
-    if file==None:
-        file=asksaveasfilename(initialfile='Untitled.txt',defaultextension='.txt',filetypes=[('All Files','*.*'),('Text documents','*.txt')])
+    if file is None:
+        file=asksaveasfilename(initialfile = 'Untitled.txt',defaultextension='.txt',filetypes=[('All Files','*.*'),('Text documents','*.txt')])
 
-        if file=='':
+        if file is '':
             file=None
         else:
             #Save as a new file
@@ -99,27 +99,27 @@ root.title('Untitled - Notepad')
 rightClickMenu(root)
 
 menubar=Menu(root)
-m1=Menu(menubar,tearoff=0)
-m1.add_command(label='New',command=new)
-m1.add_command(label='Save',command=save)
-m1.add_command(label='Open',command=Open)
+m1=Menu(menubar,tearoff = 0)
+m1.add_command(label = 'New',command=new)
+m1.add_command(label = 'Save',command=save)
+m1.add_command(label = 'Open',command=Open)
 m1.add_separator()
-m1.add_command(label='Exit',command=Appquit)
+m1.add_command(label = 'Exit',command=Appquit)
 
 root.config(menu=menubar)
-menubar.add_cascade(label='File',menu=m1)
+menubar.add_cascade(label = 'File',menu=m1)
 
 m2=Menu(menubar,tearoff=0)
-m2.add_command(label='Cut',command=cut)
-m2.add_command(label='Copy',command=copy)
-m2.add_command(label='Paste',command=paste)
+m2.add_command(label = 'Cut',command=cut)
+m2.add_command(label = 'Copy',command=copy)
+m2.add_command(label = 'Paste',command=paste)
 
 root.config(menu=menubar)
-menubar.add_cascade(label='Edit',menu=m2)
+menubar.add_cascade(label = 'Edit',menu=m2)
 
 m3=Menu(menubar,tearoff=0)
-m3.add_command(label='View Help',command=view_help)
-m3.add_command(label='About Notepad',command=about_notepad)
+m3.add_command(label = 'View Help',command=view_help)
+m3.add_command(label = 'About Notepad',command=about_notepad)
 root.config(menu=menubar)
 menubar.add_cascade(label='Help',menu=m3)
 
